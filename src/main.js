@@ -1,37 +1,39 @@
-import { createApp } from "vue";
-import { createWebHistory, createRouter } from "vue-router";
-
-// styles
-
 import "@fortawesome/fontawesome-free/css/all.min.css";
 import "@/assets/styles/tailwind.css";
 
+import { createRouter, createWebHistory } from "vue-router";
+
+import Admin from "@/layouts/Admin.vue";
+import App from "@/App.vue";
+import Auth from "@/layouts/Auth.vue";
+import Dashboard from "@/views/admin/Dashboard.vue";
+import Index from "@/views/Index.vue";
+import Landing from "@/views/Landing.vue";
+import Login from "@/views/auth/Login.vue";
+import Maps from "@/views/admin/Maps.vue";
+import Profile from "@/views/Profile.vue";
+import Register from "@/views/auth/Register.vue";
+import Settings from "@/views/admin/Settings.vue";
+import Tables from "@/views/admin/Tables.vue";
+import { createApp } from "vue";
+
+// styles
+
+
 // mouting point for the whole app
 
-import App from "@/App.vue";
 
 // layouts
 
-import Admin from "@/layouts/Admin.vue";
-import Auth from "@/layouts/Auth.vue";
 
 // views for Admin layout
 
-import Dashboard from "@/views/admin/Dashboard.vue";
-import Settings from "@/views/admin/Settings.vue";
-import Tables from "@/views/admin/Tables.vue";
-import Maps from "@/views/admin/Maps.vue";
 
 // views for Auth layout
 
-import Login from "@/views/auth/Login.vue";
-import Register from "@/views/auth/Register.vue";
 
 // views without layouts
 
-import Landing from "@/views/Landing.vue";
-import Profile from "@/views/Profile.vue";
-import Index from "@/views/Index.vue";
 
 // routes
 
@@ -76,7 +78,7 @@ const routes = [
   },
   {
     path: "/landing",
-    component: Landing,
+    component: Index,
   },
   {
     path: "/profile",
@@ -84,7 +86,7 @@ const routes = [
   },
   {
     path: "/",
-    component: Index,
+    component: Landing,
   },
   { path: "/:pathMatch(.*)*", redirect: "/" },
 ];
